@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #news {
+      width: 280px;
+      height: 460px;
+      border: 1px solid #999999;
+      float: left;
+    }
+
+    #news h1 {
+      font-size: 16px;
+      font-weight: bolder;
+    }
+
+
+    #news table {
+      width: 260px;
+      margin: auto;
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    #news table th {
+      background-color: #3399FF;
+      font-size: 14px;
+      color: #FFFFFF;
+    }
+
+    #news table td {
+      font-size: 12px;
+      line-height: 2;
+    }
+
+    #news table tr:nth-child(even) {
+      background-color: #FFFFCC;
+    }
+
+    #news table tr:nth-child(odd) {
+      background-color: #DDDDDD;
+    }
+
+    #news table td:nth-child(2) {
+      text-align: center;
+    }
+
+    #photo {
+      width: 590px;
+      height: 460px;
+      border: 1px solid #999999;
+      float: right;
+      background-color: #333333;
+      font-size: 14px;
+      color: #FFFF00;
+    }
+
+    #photo table {
+      width: 580px;
+      margin: auto;
+      border-collapse: collapse;
+      border-spacing: 0;
+      text-align: center;
+    }
+
+    #photo #big {
+      width: 580px;
+      height: 340px;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="news">
+    <h1>最新消息</h1>
+    <table>
+      <tr>
+        <th>主題</th>
+        <th>發布日期</th>
+      </tr>
+      <tr>
+        <td><img src="../images/0201.png">公告全國技能競賽相關事宜</td>
+        <td>111/10/12</td>
+      </tr>
+      <tr>
+        <td><img src="../images/0201.png">公告即測即評及發證相關事宜</td>
+        <td>111/10/12</td>
+      </tr>
+      <tr>
+        <td><img src="../images/0201.png">公告網頁設計修題相關事宜</td>
+        <td>111/10/12</td>
+      </tr>
+      <tr>
+        <td><img src="../images/0201.png">公告網路架設應檢相關事宜</td>
+        <td>111/10/12</td>
+      </tr>
+    </table>
+  </div>
+  <div id="photo">
+    <table>
+      <tr>
+        <td colspan="4"><img id="big" src="../images/0202A.png"></td>
+      </tr>
+      <tr>
+        <td><a id="s1"><img src="../images/0202B.png" data-title="第30屆倫敦奧運"></a></td>
+        <td><a id="s2"><img src="../images/0203B.png" data-title="許淑淨奪舉重銀牌"></a></td>
+        <td><a id="s3"><img src="../images/0204B.png" data-title="第26屆深圳世大運"></a></td>
+        <td><a id="s4"><img src="../images/0205B.png" data-title="第27屆喀山世大運"></a></td>
+      </tr>
+      <tr>
+        <td>第30屆倫敦奧運</td>
+        <td>許淑淨奪舉重銀牌</td>
+        <td>第26屆深圳世大運</td>
+        <td>第27屆喀山世大運</td>
+      </tr>
+    </table>
+  </div>
+  <script>
+    const big = document.querySelector('#big')
+    const s1 = document.querySelector('#s1')
+    const s2 = document.querySelector('#s2')
+    const s3 = document.querySelector('#s3')
+    const s4 = document.querySelector('#s4')
+
+    s1.addEventListener('click', swapImage)
+    s2.addEventListener('click', swapImage)
+    s3.addEventListener('click', swapImage)
+    s4.addEventListener('click', swapImage)
+
+    function swapImage (e) {
+      if (e.target.dataset.title === '第30屆倫敦奧運') big.src = '../images/0202A.png'
+      if (e.target.dataset.title === '許淑淨奪舉重銀牌') big.src = '../images/0203A.png'
+      if (e.target.dataset.title === '第26屆深圳世大運') big.src = '../images/0204A.png'
+      if (e.target.dataset.title === '第27屆喀山世大運') big.src = '../images/0205A.png'
+    }
+  </script>
+</body>
+
+</html>
