@@ -14,8 +14,8 @@
     #main {
       width: 1024px;
       height: 768px;
-      background-color: #FFFFFF;
       margin: auto;
+      background-color: #FFFFFF;
     }
 
     table {
@@ -31,7 +31,7 @@
     #top {
       width: 1024px;
       height: 90px;
-      background-color: #00B0F0;
+      background: #00B0F0;
     }
 
     #top td:first-child {
@@ -52,27 +52,31 @@
     }
 
     #menu a {
-      background-color: #EEEEEE;
       color: #000000;
       text-decoration: none;
+      background-color: #EEEEEE;
       display: block;
     }
 
     #menu a:hover {
-      background-color: #FFFF00;
       font-size: 14px;
       color: #FF0000;
       font-weight: bold;
+      background-color: #FFFF00;
+      /* 滑鼠游標變成手指頭 */
       cursor: pointer;
     }
 
+    
     #content {
+      /* 加上內距，1024 - 40 = 984 */
       width: 984px;
+      /* 加上內距，608 - 40 = 568 */
       height: 568px;
       padding: 20px;
-      background-color: #FFFFFF;
-      font-size: 14px;
+      background: #FFFFFF;
       color: #000000;
+      font-size: 14px;
     }
 
     #content iframe {
@@ -83,10 +87,11 @@
     #footer {
       width: 1024px;
       height: 45px;
-      background-color: #CCCCCC;
+      background: #CCCCCC;
       color: #FFFFFF;
-      text-align: center;
       font-size: 14px;
+      text-align: center;
+      /* 可以不做，題目只有說水平置中 */
       line-height: 22.5px;
     }
   </style>
@@ -103,6 +108,7 @@
       </table>
     </div>
     <div id="menu">
+      <!-- hover 時，表格不抖動 - 可以不用做 -->
       <table style="table-layout: fixed;">
         <tr>
           <td><a href="./index.html">首頁</a></td>
