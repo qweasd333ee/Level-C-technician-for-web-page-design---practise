@@ -111,16 +111,16 @@
       </tr>
       <tr>
         <td>
-          <a id="s1"><img src="../images/0202B.png" data-title="第30屆倫敦奧運"></a>
+          <a id="s1"><img class="pic" src="../images/0202B.png" data-title="第30屆倫敦奧運"></a>
         </td>
         <td>
-          <a id="s2"><img src="../images/0203B.png" data-title="許淑淨奪舉重銀牌"></a>
+          <a id="s2"><img class="pic" src="../images/0203B.png" data-title="許淑淨奪舉重銀牌"></a>
         </td>
         <td>
-          <a id="s3"><img src="../images/0204B.png" data-title="第26屆深圳世大運"></a>
+          <a id="s3"><img class="pic" src="../images/0204B.png" data-title="第26屆深圳世大運"></a>
         </td>
         <td>
-          <a id="s4"><img src="../images/0205B.png" data-title="第27屆喀山世大運"></a>
+          <a id="s4"><img class="pic" src="../images/0205B.png" data-title="第27屆喀山世大運"></a>
         </td>
       </tr>
       <tr>
@@ -132,27 +132,34 @@
     </table>
   </div>
 
+  <script src="../others/jquery-2.1.4.min.js"></script>
   <script>
     // 1. 抓到 DOM 元素
-    const big = document.querySelector('#big')
-    const s1 = document.querySelector('#s1')
-    const s2 = document.querySelector('#s2')
-    const s3 = document.querySelector('#s3')
-    const s4 = document.querySelector('#s4')
+    // const big = document.querySelector('#big')
+    // const s1 = document.querySelector('#s1')
+    // const s2 = document.querySelector('#s2')
+    // const s3 = document.querySelector('#s3')
+    // const s4 = document.querySelector('#s4')
 
     // 2. 註冊事件
-    s1.addEventListener('click', swapImage)
-    s2.addEventListener('click', swapImage)
-    s3.addEventListener('click', swapImage)
-    s4.addEventListener('click', swapImage)
+    // s1.addEventListener('click', swapImage)
+    // s2.addEventListener('click', swapImage)
+    // s3.addEventListener('click', swapImage)
+    // s4.addEventListener('click', swapImage)
 
     // 3. 函式-要做的功能
-    function swapImage(e) {
-      if (e.target.dataset.title === '第30屆倫敦奧運') big.src = '../images/0202A.png'
-      if (e.target.dataset.title === '許淑淨奪舉重銀牌') big.src = '../images/0203A.png'
-      if (e.target.dataset.title === '第26屆深圳世大運') big.src = '../images/0204A.png'
-      if (e.target.dataset.title === '第27屆喀山世大運') big.src = '../images/0205A.png'
-    }
+    // function swapImage(e) {
+    //   if (e.target.dataset.title === '第30屆倫敦奧運') big.src = '../images/0202A.png'
+    //   if (e.target.dataset.title === '許淑淨奪舉重銀牌') big.src = '../images/0203A.png'
+    //   if (e.target.dataset.title === '第26屆深圳世大運') big.src = '../images/0204A.png'
+    //   if (e.target.dataset.title === '第27屆喀山世大運') big.src = '../images/0205A.png'
+    // }
+    // 抓到同一組東西，對它們做同一件事情
+    $('.pic').each(function (i) {
+      $(this).on('click', function () {
+        $('#big').attr('src', `../images/020${i + 2}A.png`)
+      })
+    })
   </script>
 </body>
 
