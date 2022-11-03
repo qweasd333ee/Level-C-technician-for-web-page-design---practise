@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      background: #FFFFCC;
+      text-align: center;
+    }
+
+    table {
+      margin: auto;
+    }
+
+    h1 {
+      font-size: 20px;
+      font-family: "標楷體";
+      font-weight: bolder;
+      text-decoration: underline;
+      color: #0000FF;
+    }
+
+    .img {
+      width: 60px;
+      height: 45px;
+      border: medium solid #00F;
+    }
+
+    .img:hover {
+      cursor: pointer;
+      border: medium solid #00FFFF;
+    }
+
+    #big {
+      width: 400px;
+      height: 300px;
+      border: 5px solid #00F;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>蘭嶼賞魚去</h1>
+  <table>
+    <tr>
+      <td colspan="5"><img id="big" src="../images/0551.jpg"></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><img class="img" src="../images/0551.jpg"></td>
+      <td><img class="img" src="../images/0552.jpg"></td>
+      <td><img class="img" src="../images/0553.jpg"></td>
+      <td><img class="img" src="../images/0554.jpg"></td>
+      <td><img class="img" src="../images/0555.jpg"></td>
+    </tr>
+  </table>
+  <script src="./jquery-2.1.4.min.js"></script>
+  <script>
+    // js
+    const big = document.querySelector('#big')
+    const imgs = document.querySelectorAll('.img')
+    imgs.forEach(function (img, index) {
+      img.addEventListener('click', function () {
+        big.src = `../images/055${index + 1}.jpg`
+      })
+    })
+
+    // jq
+    $('.img').each(function (index, img) {
+      $(this).click(function () {
+        $('#big').attr('src', `../images/055${index + 1}.jpg`)
+      })
+    })
+  </script>
+</body>
+
+</html>
