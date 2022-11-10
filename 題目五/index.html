@@ -144,29 +144,38 @@
     </div>
   </div>
 
+  <script src="./album5/jquery-2.1.4.min.js"></script>
   <script>
     // 抓到所有圖片
-    const imgs = document.querySelectorAll('.img')
-    // 抓到所有元素時
-    imgs.forEach(function (img) {
-      // 增加事件，滑鼠移入時
-      img.addEventListener('mouseover', function () {
-        if(img.alt === '金門逍遙遊') img.src = './images/0501r.gif'
-        if(img.alt === '卡蹓到馬祖') img.src = './images/0502r.gif'
-        if(img.alt === '踏浪澎湖行') img.src = './images/0503r.gif'
-        if(img.alt === '綠島唱夜曲') img.src = './images/0504r.gif'
-        if(img.alt === '蘭嶼賞魚去') img.src = './images/0505r.gif'
-        if(img.alt === '回首頁') img.src = './images/0506r.gif'
-      })
+    // const imgs = document.querySelectorAll('.img')
+    // // 抓到所有元素時
+    // imgs.forEach(function (img) {
+    //   // 增加事件，滑鼠移入時
+    //   img.addEventListener('mouseover', function () {
+    //     if(img.alt === '金門逍遙遊') img.src = './images/0501r.gif'
+    //     if(img.alt === '卡蹓到馬祖') img.src = './images/0502r.gif'
+    //     if(img.alt === '踏浪澎湖行') img.src = './images/0503r.gif'
+    //     if(img.alt === '綠島唱夜曲') img.src = './images/0504r.gif'
+    //     if(img.alt === '蘭嶼賞魚去') img.src = './images/0505r.gif'
+    //     if(img.alt === '回首頁') img.src = './images/0506r.gif'
+    //   })
 
-      img.addEventListener('mouseout', function () {
-        // 增加事件，滑鼠移出時
-        if(img.alt === '金門逍遙遊') img.src = './images/0501b.gif'
-        if(img.alt === '卡蹓到馬祖') img.src = './images/0502b.gif'
-        if(img.alt === '踏浪澎湖行') img.src = './images/0503b.gif'
-        if(img.alt === '綠島唱夜曲') img.src = './images/0504b.gif'
-        if(img.alt === '蘭嶼賞魚去') img.src = './images/0505b.gif'
-        if(img.alt === '回首頁') img.src = './images/0506b.gif'
+    //   img.addEventListener('mouseout', function () {
+    //     // 增加事件，滑鼠移出時
+    //     if(img.alt === '金門逍遙遊') img.src = './images/0501b.gif'
+    //     if(img.alt === '卡蹓到馬祖') img.src = './images/0502b.gif'
+    //     if(img.alt === '踏浪澎湖行') img.src = './images/0503b.gif'
+    //     if(img.alt === '綠島唱夜曲') img.src = './images/0504b.gif'
+    //     if(img.alt === '蘭嶼賞魚去') img.src = './images/0505b.gif'
+    //     if(img.alt === '回首頁') img.src = './images/0506b.gif'
+    //   })
+    // })
+    $('.img').each(function (i) {
+      $(this).mouseover(function () {
+        if (i === 0 || i === 1 || i === 2 || i === 3 || i === 4 || i === 5) $(this).attr('src', `./images/050${i + 1}r.gif`)
+      })
+      $(this).mouseout(function () {
+        if (i === 0 || i === 1 || i === 2 || i === 3 || i === 4 || i === 5) $(this).attr('src', `./images/050${i + 1}b.gif`)
       })
     })
   </script>
